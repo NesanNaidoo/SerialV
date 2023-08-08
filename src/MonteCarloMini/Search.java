@@ -26,6 +26,7 @@ public class Search {
 		this.pos_col = pos_col; //randomly allocated
 		this.terrain = terrain;
 		this.stopped = false;
+		//tesst
 	}
 	
 	public int find_valleys() {	
