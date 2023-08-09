@@ -64,13 +64,14 @@ class MonteCarloMinimizationParallel {
 			// terrain.print_heights();
 		}
 
-		// start timer
 		ForkJoinPool fJPool = new ForkJoinPool();
 		SearchParallel searchStart = new SearchParallel(searches, 0, searches.length);
 
+		// start timer
 		tick();
 
-		Minimum min = fJPool.invoke(searchStart);
+		Minimum min = fJPool.invoke(searchStart); // invokes task then waits for completion to return result
+
 		// end timer
 		tock();
 

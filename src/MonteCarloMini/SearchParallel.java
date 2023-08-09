@@ -5,6 +5,7 @@ import java.util.concurrent.RecursiveTask;
 public class SearchParallel extends RecursiveTask<Minimum> {
 	private static final long serialVersionUID = 1L;
 
+	// arguments
 	static final int seq_cut = 2000000;
 	Search[] search;
 	int numSearch, l, h;
@@ -20,7 +21,8 @@ public class SearchParallel extends RecursiveTask<Minimum> {
 
 	@Override
 
-	protected Minimum compute() {
+	protected Minimum compute() { // this is a recursive task which returns min of type Minimum which has a
+									// minimum and associated finder value
 
 		if ((h - l) < seq_cut) {
 
@@ -45,12 +47,13 @@ public class SearchParallel extends RecursiveTask<Minimum> {
 		} else {
 			SearchParallel left = new SearchParallel(search, l, (h + l) / 2);
 			SearchParallel right = new SearchParallel(search, (h + l) / 2, h);
-			left.fork(); // this
+			left.fork();
 
 			Minimum min1 = right.compute();
 
 			Minimum min2 = left.join();
 
+			// compares left and right to see which thread has a smaller minimum
 			if (min2.getMin() < min1.getMin()) {
 				return min2;
 			} else {

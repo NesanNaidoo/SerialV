@@ -4,18 +4,21 @@ public class Minimum {
     private int min;
     private int find;
 
-    public Minimum(int min,int find){
-        this.min=min;
-        this.find=find;
+    // Constructor for Minimum
+    public Minimum(int min, int find) {
+        this.min = min;
+        this.find = find;
 
     }
 
-    public int getMin(){
+    // get Minimum
+    public int getMin() {
         return min;
 
     }
 
-     public int getFinder(){
+    // get associated finder
+    public int getFinder() {
         return find;
 
     }
