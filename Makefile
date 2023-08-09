@@ -21,3 +21,5 @@ clean:
 
 runS:
 		java -Xmx6g -cp $(BINDIR) MonteCarloMini.MonteCarloMinimization 1000 1000 -500 500 -500 500 30
+runP:
+		java -Xmx6g -cp $(BINDIR) MonteCarloMini.MonteCarloMinimizationParallel 1000 1000 -500 500 -500 500 30
