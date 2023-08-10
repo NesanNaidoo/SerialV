@@ -3,6 +3,7 @@ package MonteCarloMini;
 import java.util.Random;
 import java.util.concurrent.ForkJoinPool;
 
+//MonteCarloMiniParallel
 class MonteCarloMinimizationParallel {
 	static final boolean DEBUG = false;
 
